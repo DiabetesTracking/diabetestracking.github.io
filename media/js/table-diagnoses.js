@@ -8,6 +8,7 @@ var TableDiagnoses = function () {
             var aData = oTable.fnGetData( nTr );
             var sOut = '<table>';
             sOut += '<tr><td>Treatement Detail:</td><td>'+aData[4]+'</td></tr>';
+            sOut += '<tr><td>Test Result Detail:</td><td>'+aData[5]+'</td></tr>';
             sOut += '</table>';
              
             return sOut;
