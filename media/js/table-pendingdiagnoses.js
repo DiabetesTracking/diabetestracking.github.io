@@ -1,14 +1,13 @@
-var TableDiagnoses = function () {
+var TablePendingDiagnoses = function () {
 
-    var initTableDiagnoses = function() {
+    var initTablePendingDiagnoses = function() {
 
         /* Formating function for row details */
         function fnFormatDetails ( oTable, nTr )
         {
             var aData = oTable.fnGetData( nTr );
             var sOut = '<table>';
-            sOut += '<tr><td>Treatement Detail:</td><td>'+aData[4]+'</td></tr>';
-            sOut += '<tr><td>Test Result Detail:</td><td>'+aData[5]+'</td></tr>';
+            sOut += '<tr><td>Self Description:</td><td>'+aData[4]+'</td></tr>';
             sOut += '</table>';
              
             return sOut;
@@ -21,18 +20,18 @@ var TableDiagnoses = function () {
         var nCloneTd = document.createElement( 'td' );
         nCloneTd.innerHTML = '<span class="row-details row-details-close"></span>';
          
-        $('#table_diagnoses thead tr').each( function () {
+        $('#table_pendingdiagnoses thead tr').each( function () {
             this.insertBefore( nCloneTh, this.childNodes[0] );
         } );
          
-        $('#table_diagnoses tbody tr').each( function () {
+        $('#table_pendingdiagnoses tbody tr').each( function () {
             this.insertBefore(  nCloneTd.cloneNode( true ), this.childNodes[0] );
         } );
          
         /*
          * Initialse DataTables, with no sorting on the 'details' column
          */
-        var oTable = $('#table_diagnoses').dataTable( {
+        var oTable = $('#table_pendingdiagnoses').dataTable( {
             "aoColumnDefs": [
                 {"bSortable": false, "aTargets": [ 0, 4, 5 ] }
             ],
@@ -47,12 +46,12 @@ var TableDiagnoses = function () {
         jQuery('#table_diagnoses_wrapper .dataTables_filter input').addClass("m-wrap small"); // modify table search input
         jQuery('#table_diagnoses_wrapper .dataTables_length select').addClass("m-wrap small"); // modify table per page dropdown
         jQuery('#table_diagnoses_wrapper .dataTables_length select').select2(); // initialzie select2 dropdown
-         
+
         /* Add event listener for opening and closing details
          * Note that the indicator for showing which row is open is not controlled by DataTables,
          * rather it is done here
          */
-        $('#table_diagnoses').on('click', ' tbody td .row-details', function () {
+        $('#table_pendingdiagnoses').on('click', ' tbody td .row-details', function () {
             var nTr = $(this).parents('tr')[0];
             if ( oTable.fnIsOpen(nTr) )
             {
@@ -67,6 +66,7 @@ var TableDiagnoses = function () {
                 oTable.fnOpen( nTr, fnFormatDetails(oTable, nTr), 'details' );
             }
         });
+
     }
 
     return {
@@ -78,7 +78,7 @@ var TableDiagnoses = function () {
                 return;
             }
 
-            initTableDiagnoses();
+            initTablePendingDiagnoses();
         }
 
     };
