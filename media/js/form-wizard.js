@@ -48,6 +48,9 @@ var FormWizard = function () {
                         equalTo: "#submit_form_password"
                     },
                     //profile
+                    description: {
+                        required: true
+                    },
                     fullname: {
                         required: true
                     },

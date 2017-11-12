@@ -54,7 +54,7 @@
 						</a>
 						<ul class="dropdown-menu">
 							<li><a href="patient_home.html"><i class="icon-user"></i> My Profile</a></li>
-							<li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
+							<li><a href="index.html"><i class="icon-key"></i> Log Out</a></li>
 						</ul>
 					</li>
 					<!-- END USER LOGIN DROPDOWN -->
@@ -89,8 +89,8 @@
 				</li>
 				<li class="">
 					<a href="patient_home.html">
-					<i class="icon-briefcase"></i>
-					<span class="title">Home</span>
+						<i class="icon-home"></i>
+						<span class="title">Home</span>
 					</a>
 				</li>
 				<li class="">
@@ -115,6 +115,7 @@
 					<a href="javascript:;">
 						<i class="icon-file-text"></i>
 						<span class="title">Consult Diagnostic</span>
+						<span class="selected"></span>
 					</a>
 				</li>
 			</ul>
@@ -130,8 +131,19 @@
 					<div class="span12">
 						<!-- BEGIN PAGE TITLE & BREADCRUMB-->
 						<h3 class="page-title">
-							Consultation <small>Submit a Consultation Request</small>
+							Consult Diagnostic <small>Submit a Consultation Request</small>
 						</h3>
+						<ul class="breadcrumb">
+						    <li>
+						        <i class="icon-home"></i>
+								<a href="patient_home.html">Home</a>
+								<i class="icon-angle-right"></i>
+							</li>
+							<li>
+								<a href="#">Consult Diagnostic</a>
+								<i class="icon-angle-right"></i>
+							</li>
+						</ul>
 					</div>
 				</div>
 				<!-- END PAGE HEADER-->
@@ -145,11 +157,19 @@
 							</div>
 							<div class="portlet-body form">
 								<!-- BEGIN FORM-->
-								<form action="#" class="form-horizontal">
+								<form action="#" id="form_sample_1" class="form-horizontal">
+								    <div class="alert alert-error hide">
+										<button class="close" data-dismiss="alert"></button>
+										You have some form errors. Please check below.
+									</div>
+									<div class="alert alert-success hide">
+										<button class="close" data-dismiss="alert"></button>
+										Your form validation is successful!
+									</div>
 									<div class="control-group">
-										<label class="control-label">Description</label>
+										<label class="control-label">Description<span class="required">*</span></label>
 										<div class="controls">
-											<textarea class="span11 m-wrap" rows="6"></textarea>
+											<textarea class="span11 m-wrap" rows="6" name="description"></textarea>
 										</div>
 									</div>
 									<div class="portlet box blue">
@@ -296,16 +316,18 @@
 	<!-- END CORE PLUGINS -->
 	<!-- BEGIN PAGE LEVEL PLUGINS -->
 	<script type="text/javascript" src="media/js/select2.min.js"></script>
-	<script type="text/javascript" src="media/js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" src="media/js/DT_bootstrap.js"></script>
+	<script type="text/javascript" src="media/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="media/js/additional-methods.min.js"></script>
+	<script type="text/javascript" src="media/js/chosen.jquery.min.js"></script>
 	<!-- END PAGE LEVEL PLUGINS -->
 	<!-- BEGIN PAGE LEVEL SCRIPTS -->
 	<script src="media/js/app.js"></script>
-	<script src="media/js/table-doctors.js"></script>
+	<script src="media/js/form-validation.js"></script>
 	<script>
 		jQuery(document).ready(function() {
 			App.init();
-			TableDoctors.init();
+			FormValidation.init();
 		});
 	</script>
 </body>
