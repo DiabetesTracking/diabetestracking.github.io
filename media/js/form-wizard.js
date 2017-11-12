@@ -51,6 +51,12 @@ var FormWizard = function () {
                     description: {
                         required: true
                     },
+                    treatement: {
+                        required: true
+                    },
+                    testresult: {
+                        required: true
+                    },
                     fullname: {
                         required: true
                     },
@@ -64,6 +70,9 @@ var FormWizard = function () {
                     gender: {
                         required: true
                     },
+                    birthday: {
+                        required: true
+                    },
                     address: {
                         required: true
                     },
@@ -74,6 +83,27 @@ var FormWizard = function () {
                         required: true
                     },
                     //payment
+                    eye_doctor:{
+                        required: true
+                    },
+                    feet_doctor:{
+                        required: true
+                    },
+                    kidney_doctor:{
+                        required: true
+                    },
+                    heart_doctor:{
+                        required: true
+                    },
+                    ldl_doctor:{
+                        required: true
+                    },
+                    bloodpressure_doctor:{
+                        required: true
+                    },
+                    glycemic_doctor:{
+                        required: true
+                    },
                     card_name: {
                         required: true
                     },
@@ -112,6 +142,14 @@ var FormWizard = function () {
                 errorPlacement: function (error, element) { // render error placement for each input type
                     if (element.attr("name") == "gender") { // for uniform radio buttons, insert the after the given container
                         error.addClass("no-left-padding").insertAfter("#form_gender_error");
+                    } else if (element.attr("name") == "eye_doctor") {
+                        error.addClass("no-left-padding").insertAfter("#form_eye_error");
+                    } else if (element.attr("name") == "feet_doctor") {
+                        error.addClass("no-left-padding").insertAfter("#form_feet_error");
+                    } else if (element.attr("name") == "kidney_doctor") {
+                        error.addClass("no-left-padding").insertAfter("#form_kidney_error");
+                    } else if (element.attr("name") == "heart_doctor") {
+                        error.addClass("no-left-padding").insertAfter("#form_heart_error");
                     } else if (element.attr("name") == "payment[]") { // for uniform radio buttons, insert the after the given container
                         error.addClass("no-left-padding").insertAfter("#form_payment_error");
                     } else {

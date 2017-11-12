@@ -5,7 +5,7 @@
 <!-- BEGIN HEAD -->
 <head>
 	<meta charset="utf-8" />
-	<title>Diabetes Tracking System | Find A Doctor | Consult Doctor</title>
+	<title>Diabetes Tracking System | Diagnostic Requests | Give Diagnosis </title>
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
@@ -49,11 +49,11 @@
 					<li class="dropdown user">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							<img alt="" src="media/image/avatar1_small.jpg" />
-							<span class="username">Patient Demo</span>
+							<span class="username">Doctor Demo</span>
 							<i class="icon-angle-down"></i>
 						</a>
 						<ul class="dropdown-menu">
-							<li><a href="patient_home.html"><i class="icon-user"></i> My Profile</a></li>
+							<li><a href="doctor_home.html"><i class="icon-user"></i> My Profile</a></li>
 							<li><a href="index.html"><i class="icon-key"></i> Log Out</a></li>
 						</ul>
 					</li>
@@ -76,46 +76,41 @@
 					<div class="sidebar-toggler hidden-phone"></div>
 					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
 				</li>
-				<li>
-					<!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
-					<form class="sidebar-search">
-						<div class="input-box">
-							<a href="javascript:;" class="remove"></a>
-							<input type="text" placeholder="Search..." />
-							<input type="button" class="submit" value=" " />
-						</div>
-					</form>
-					<!-- END RESPONSIVE QUICK SEARCH FORM -->
-				</li>
 				<li class="">
-					<a href="patient_home.html">
+					<a href="doctor_home.html">
 						<i class="icon-home"></i>
 						<span class="title">Home</span>
 					</a>
 				</li>
-				<li class="active ">
-					<a href="javascript:;">
+				<li class="">
+					<a href="doctor_patienttable.html">
 						<i class="icon-user"></i>
-						<span class="title">Find A Doctor</span>
-						<span class="selected"></span>
+						<span class="title">My Patients</span>
 					</a>
 				</li>
 				<li class="">
-					<a href="patient_diagnosistable.html">
+					<a href="">
 						<i class="icon-table"></i>
 						<span class="title">My Diagnoses</span>
+						<span class="arrow"></span>
+						<span class="selected"></span>
 					</a>
+					<ul class="sub-menu">
+						<li >
+							<a href="doctor_completeddiagnoses.html">
+							Completed Diagnoses</a>
+						</li>
+						<li >
+							<a href="doctor_pendingdiagnoses.html">
+							Pending Diagnoses</a>
+						</li>
+					</ul>
 				</li>
-				<li class="">
-					<a href="patient_symptomtable.html">
+				<li class="active ">
+					<a href="javascript:;">
 						<i class="icon-th"></i>
-						<span class="title">Track My Symptoms</span>
-					</a>
-				</li>
-				<li class="">
-					<a href="patient_consultdiagnostic.html">
-						<i class="icon-file-text"></i>
-						<span class="title">Consult Diagnostic</span>
+						<span class="title">Diagnostic Requests</span>
+						<span class="selected"></span>
 					</a>
 				</li>
 			</ul>
@@ -131,20 +126,20 @@
 					<div class="span12">
 						<!-- BEGIN PAGE TITLE & BREADCRUMB-->
 						<h3 class="page-title">
-							Find A Doctor <small>Consult Doctor</small>
+							My Diagnoses <small>Finish Diagnosis</small>
 						</h3>
 						<ul class="breadcrumb">
 							<li>
 								<i class="icon-home"></i>
-								<a href="patient_home.html">Home</a>
+								<a href="doctor_home.html">Home</a>
 								<i class="icon-angle-right"></i>
 							</li>
 							<li>
-								<a href="patient_doctortable.html">Find A Doctor</a>
+								<a href="doctor_diagnosticrequesttabel.html">Diagnostic Requests</a>
 								<i class="icon-angle-right"></i>
 							</li>
 							<li>
-								<a href="#">Consult Doctor</a>
+								<a href="#">Give Diagnosis</a>
 								<i class="icon-angle-right"></i>
 							</li>
 						</ul>
@@ -154,10 +149,10 @@
 				<!-- BEGIN PAGE CONTENT-->
 				<div class="row-fluid">
 					<div class="span12">
-						<div class="portlet box green" id="form_wizard_1">
+						<div class="portlet box blue" id="form_wizard_1">
 							<div class="portlet-title">
 								<div class="caption">
-									<i class="icon-reorder"></i> Consult Doctor <span class="step-title">Step 1 of 4</span>
+									<i class="icon-reorder"></i> Finish Diagnoses <span class="step-title">Step 1 of 4</span>
 								</div>
 							</div>
 							<div class="portlet-body form">
@@ -169,19 +164,19 @@
 													<li class="span3">
 														<a href="#tab1" data-toggle="tab" class="step active">
 															<span class="number">1</span>
-															<span class="desc"><i class="icon-ok"></i> Confirm Doctor's Information</span>
+															<span class="desc"><i class="icon-ok"></i> Patient's Self Description</span>
 														</a>
 													</li>
 													<li class="span3">
 														<a href="#tab2" data-toggle="tab" class="step">
 															<span class="number">2</span>
-															<span class="desc"><i class="icon-ok"></i> General Self Description</span>
+															<span class="desc"><i class="icon-ok"></i> Treatement And Test Result</span>
 														</a>
 													</li>
 													<li class="span3">
 														<a href="#tab3" data-toggle="tab" class="step">
 															<span class="number">3</span>
-															<span class="desc"><i class="icon-ok"></i> Self Description of Symptoms</span>
+															<span class="desc"><i class="icon-ok"></i> Rating of Symptoms</span>
 														</a>
 													</li>
 													<li class="span3">
@@ -206,218 +201,312 @@
 												Your form validation is successful!
 											</div>
 											<div class="tab-pane active" id="tab1">
-												<h3 class="block">Confirm doctor's information</h3>
+												<h3 class="block">Confirm patient's information</h3>
+												<h4 class="form-section">Patient's personal information</h4>
 												<div class="control-group">
-													<label class="control-label">Doctor's Name:</label>
+													<label class="control-label">Patient's Name:</label>
 													<div class="controls">
-														<span class="text display-value" data-display="username">Doctor Demo</span>
+														<span class="text display-value" data-display="username">Patient Demo</span>
 													</div>
 												</div>
 												<div class="control-group">
-													<label class="control-label">Email:</label>
+													<label class="control-label">Gender:</label>
 													<div class="controls">
-														<span class="text display-value" data-display="email"><a href="#">doctordemo@mywebsite.com</a></span>
+														<span class="text display-value" data-display="gender">Male</span>
 													</div>
 												</div>
 												<div class="control-group">
-													<label class="control-label">Mobile Number:</label>
+													<label class="control-label">Birthday:</label>
 													<div class="controls">
-														<span class="text display-value" data-display="phone">+1 647 123 (1234)</span>
+														<span class="text display-value" data-display="birthday">1958.08.18</span>
 													</div>
 												</div>
-												<div class="control-group">
-													<label class="control-label">Address:</label>
-													<div class="controls">
-														<span class="text display-value" data-display="address">Address Demo</span>
-													</div>
-												</div>
-												<div class="control-group">
-													<label class="control-label">ZIP Code:</label>
-													<div class="controls">
-														<span class="text display-value" data-display="zip">A1B C2D</span>
-													</div>
-												</div>
-											</div>
-											<div class="tab-pane" id="tab2">
-												<h3 class="block">Provide general self description</h3>
-												<div class="control-group">
-													<label class="control-label">Description<span class="required">*</span></label>
-													<div class="controls">
-														<textarea class="span11 m-wrap" rows="6" name="description"></textarea>
-														<span class="help-inline">Provide your self description</span>
-													</div>
-												</div>
-											</div>
-											<div class="tab-pane" id="tab3">
-												<h3 class="block">Provide self description of symptoms (Optional)</h3>
-												<div class="control-group">
-													<label class="control-label">Eye Condition</label>
-													<div class="controls">
-														<label class="radio">
-															<input type="radio" name="eye" value="good" data-title="Good"/>
-															Good
-														</label>
-														<label class="radio">
-															<input type="radio" name="eye" value="not good" data-title="Not Good"/>
-															Not Good
-														</label>
-														<label class="radio">
-															<input type="radio" name="eye" value="bad" />
-															Bad
-														</label>
-													</div>
-												</div>
-												<div class="control-group">
-													<label class="control-label">Feet Condition</label>
-													<div class="controls">
-														<label class="radio">
-															<input type="radio" name="feet" value="good" data-title="Good"/>
-															Good
-														</label>
-														<label class="radio">
-															<input type="radio" name="feet" value="not good" data-title="Not Good"/>
-															Not Good
-														</label>
-														<label class="radio">
-															<input type="radio" name="feet" value="bad" data-title="Bad"/>
-															Bad
-														</label>
-													</div>
-												</div>
-												<div class="control-group">
-													<label class="control-label">Kidney Condition</label>
-													<div class="controls">
-														<label class="radio">
-															<input type="radio" name="kidney" value="good" data-title="Good"/>
-															Good
-														</label>
-														<label class="radio">
-															<input type="radio" name="kidney" value="not good" data-title="Not Good"/>
-															Not Good
-														</label>
-														<label class="radio">
-															<input type="radio" name="kidney" value="bad" data-title="Bad"/>
-															Bad
-														</label>
-													</div>
-												</div>
-												<div class="control-group">
-													<label class="control-label">Heart Condition</label>
-													<div class="controls">
-														<label class="radio">
-															<input type="radio" name="heart" value="good" data-title="Good"/>
-															Good
-														</label>
-														<label class="radio">
-															<input type="radio" name="heart" value="not good" data-title="Not Good"/>
-															Not Good
-														</label>
-														<label class="radio">
-															<input type="radio" name="heart" value="bad" data-title="Bad"/>
-															Bad
-														</label>
-													</div>
-												</div>
-												<div class="control-group">
-													<label class="control-label">LDL Index</label>
-													<div class="controls">
-														<input type="text" class="span3 m-wrap popovers" data-trigger="hover" name="ldl" data-content="Pleasse input the LDL index in this form: x.xx(mmol/L)" data-original-title="Hint" />
-													</div>
-												</div>
-												<div class="control-group">
-													<label class="control-label">Blood Pressure</label>
-													<div class="controls">
-														<input type="text" class="span3 m-wrap popovers" data-trigger="hover" name="bloodpressure" data-content="Pleasse input the blood pressure in this form: high pressure/low pressure (mmHg)" data-original-title="Hint" />
-													</div>
-												</div>
-												<div class="control-group">
-													<label class="control-label">Glycemic Index (after meal)</label>
-													<div class="controls">
-														<input type="text" class="span3 m-wrap popovers" data-trigger="hover" name="glycemic" data-content="Pleasse input the glycemic Index in this form: x.x(mmol/L)" data-original-title="Hint" />
-													</div>
-												</div>
-											</div>
-											<div class="tab-pane" id="tab4">
-												<h3 class="block">Confirm your consultation</h3>
-												<h4 class="form-section">Doctor</h4>
-												<div class="control-group">
-													<label class="control-label">Doctor's Name:</label>
-													<div class="controls">
-														<span class="text display-value" data-display="username">Doctor Demo</span>
-													</div>
-												</div>
-												<div class="control-group">
-													<label class="control-label">Email:</label>
-													<div class="controls">
-														<span class="text display-value" data-display="email"><a href="#">doctordemo@mywebsite.com</a></span>
-													</div>
-												</div>
-												<div class="control-group">
-													<label class="control-label">Mobile Number:</label>
-													<div class="controls">
-														<span class="text display-value" data-display="phone">+1 647 123 (1234)</span>
-													</div>
-												</div>
-												<div class="control-group">
-													<label class="control-label">Address:</label>
-													<div class="controls">
-														<span class="text display-value" data-display="address">Address Demo</span>
-													</div>
-												</div>
-												<div class="control-group">
-													<label class="control-label">ZIP Code:</label>
-													<div class="controls">
-														<span class="text display-value" data-display="zip">A1B C2D</span>
-													</div>
-												</div>
-												<h4 class="form-section">Genaral Self Description</h4>
+												<h4 class="form-section">Patient's self description</h4>
 												<div class="control-group">
 													<label class="control-label">Description:</label>
 													<div class="controls">
-														<span class="text display-value" data-display="description"></span>
+														<span class="text display-value" data-display="description">Description Demo</span>
 													</div>
 												</div>
-												<h4 class="form-section">Self Description of Symptoms</h4>
+												<h4 class="form-section">Patient's self rating</h4>
 												<div class="control-group">
 													<label class="control-label">Eye Condition:</label>
 													<div class="controls">
-														<span class="text display-value" data-display="eye"></span>
+														<span class="text display-value" data-display="eye">Not Good</span>
 													</div>
 												</div>
 												<div class="control-group">
 													<label class="control-label">Feet Condition:</label>
 													<div class="controls">
-														<span class="text display-value" data-display="feet"></span>
+														<span class="text display-value" data-display="feet">Not Good</span>
 													</div>
 												</div>
 												<div class="control-group">
 													<label class="control-label">Kidney Condition:</label>
 													<div class="controls">
-														<span class="text display-value" data-display="kidney"></span>
+														<span class="text display-value" data-display="kidney">Not Good</span>
 													</div>
 												</div>
 												<div class="control-group">
 													<label class="control-label">Heart Condition:</label>
 													<div class="controls">
-														<span class="text display-value" data-display="heart"></span>
+														<span class="text display-value" data-display="heart">Not Good</span>
 													</div>
 												</div>
 												<div class="control-group">
 													<label class="control-label">LDL Index:</label>
 													<div class="controls">
-														<span class="text display-value" data-display="ldl"></span>
+														<span class="text display-value" data-display="ldl">N/A</span>
 													</div>
 												</div>
 												<div class="control-group">
 													<label class="control-label">Blood Pressure:</label>
 													<div class="controls">
-														<span class="text display-value" data-display="bloodpressure"></span>
+														<span class="text display-value" data-display="bloodpressure">N/A</span>
 													</div>
 												</div>
 												<div class="control-group">
 													<label class="control-label">Glycemic Index:</label>
 													<div class="controls">
-														<span class="text display-value" data-display="glycemic"></span>
+														<span class="text display-value" data-display="glycemic">N/A</span>
+													</div>
+												</div>
+											</div>
+											<div class="tab-pane" id="tab2">
+												<h3 class="block">Provide treatement and test result</h3>
+												<div class="control-group">
+													<label class="control-label">Treatement<span class="required">*</span></label>
+													<div class="controls">
+														<textarea class="span11 m-wrap" rows="6" name="treatement"></textarea>
+														<span class="help-inline">Provide detailed treatement</span>
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Test Result<span class="required">*</span></label>
+													<div class="controls">
+														<textarea class="span11 m-wrap" rows="6" name="testresult"></textarea>
+														<span class="help-inline">Provide test result</span>
+													</div>
+												</div>
+											</div>
+											<div class="tab-pane" id="tab3">
+												<h3 class="block">Provide rating of symptoms</h3>
+												<div class="control-group">
+													<label class="control-label">Eye Condition<span class="required">*</span></label>
+													<div class="controls">
+														<label class="radio">
+															<input type="radio" name="eye_doctor" value="good" data-title="Good"/>
+															Good
+														</label>
+														<label class="radio">
+															<input type="radio" name="eye_doctor" value="not good" data-title="Not Good"/>
+															Not Good
+														</label>
+														<label class="radio">
+															<input type="radio" name="eye_doctor" value="bad" data-title="Not Good"/>
+															Bad
+														</label>
+														<div id="form_eye_error"></div>
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Feet Condition<span class="required">*</span></label>
+													<div class="controls">
+														<label class="radio">
+															<input type="radio" name="feet_doctor" value="good" data-title="Good"/>
+															Good
+														</label>
+														<label class="radio">
+															<input type="radio" name="feet_doctor" value="not good" data-title="Not Good"/>
+															Not Good
+														</label>
+														<label class="radio">
+															<input type="radio" name="feet_doctor" value="bad" data-title="Bad"/>
+															Bad
+														</label>
+														<div id="form_feet_error"></div>
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Kidney Condition<span class="required">*</span></label>
+													<div class="controls">
+														<label class="radio">
+															<input type="radio" name="kidney_doctor" value="good" data-title="Good"/>
+															Good
+														</label>
+														<label class="radio">
+															<input type="radio" name="kidney_doctor" value="not good" data-title="Not Good"/>
+															Not Good
+														</label>
+														<label class="radio">
+															<input type="radio" name="kidney_doctor" value="bad" data-title="Bad"/>
+															Bad
+														</label>
+														<div id="form_kidney_error"></div>
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Heart Condition<span class="required">*</span></label>
+													<div class="controls">
+														<label class="radio">
+															<input type="radio" name="heart_doctor" value="good" data-title="Good"/>
+															Good
+														</label>
+														<label class="radio">
+															<input type="radio" name="heart_doctor" value="not good" data-title="Not Good"/>
+															Not Good
+														</label>
+														<label class="radio">
+															<input type="radio" name="heart_doctor" value="bad" data-title="Bad"/>
+															Bad
+														</label>
+														<div id="form_heart_error"></div>
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">LDL Index<span class="required">*</span></label>
+													<div class="controls">
+														<input type="text" class="span3 m-wrap popovers" data-trigger="hover" name="ldl_doctor" data-content="Pleasse input the LDL index in this form: x.xx(mmol/L)" data-original-title="Hint" />
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Blood Pressure<span class="required">*</span></label>
+													<div class="controls">
+														<input type="text" class="span3 m-wrap popovers" data-trigger="hover" name="bloodpressure_doctor" data-content="Pleasse input the blood pressure in this form: high pressure/low pressure (mmHg)" data-original-title="Hint" />
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Glycemic Index (after meal)<span class="required">*</span></label>
+													<div class="controls">
+														<input type="text" class="span3 m-wrap popovers" data-trigger="hover" name="glycemic_doctor" data-content="Pleasse input the glycemic Index in this form: x.x(mmol/L)" data-original-title="Hint" />
+													</div>
+												</div>
+											</div>
+											<div class="tab-pane" id="tab4">
+												<h3 class="block">Confirm your consultation</h3>
+												<h4 class="form-section">Patient's personal information</h4>
+												<div class="control-group">
+													<label class="control-label">Patient's Name:</label>
+													<div class="controls">
+														<span class="text display-value" data-display="username">Patient Demo</span>
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Gender:</label>
+													<div class="controls">
+														<span class="text display-value" data-display="gender">Male</span>
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Birthday:</label>
+													<div class="controls">
+														<span class="text display-value" data-display="birthday">1958.08.18</span>
+													</div>
+												</div>
+												<h4 class="form-section">Patient's self description</h4>
+												<div class="control-group">
+													<label class="control-label">Description:</label>
+													<div class="controls">
+														<span class="text display-value" data-display="description">Description Demo</span>
+													</div>
+												</div>
+												<h4 class="form-section">Patient's self rating</h4>
+												<div class="control-group">
+													<label class="control-label">Eye Condition:</label>
+													<div class="controls">
+														<span class="text display-value" data-display="eye">Not Good</span>
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Feet Condition:</label>
+													<div class="controls">
+														<span class="text display-value" data-display="feet">Not Good</span>
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Kidney Condition:</label>
+													<div class="controls">
+														<span class="text display-value" data-display="kidney">Not Good</span>
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Heart Condition:</label>
+													<div class="controls">
+														<span class="text display-value" data-display="heart">Not Good</span>
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">LDL Index:</label>
+													<div class="controls">
+														<span class="text display-value" data-display="ldl">N/A</span>
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Blood Pressure:</label>
+													<div class="controls">
+														<span class="text display-value" data-display="bloodpressure">N/A</span>
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Glycemic Index:</label>
+													<div class="controls">
+														<span class="text display-value" data-display="glycemic">N/A</span>
+													</div>
+												</div>
+												<h4 class="form-section">Treatement And Test Result</h4>
+												<div class="control-group">
+													<label class="control-label">Treatement:</label>
+													<div class="controls">
+														<span class="text display-value" data-display="treatement"></span>
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Test Result:</label>
+													<div class="controls">
+														<span class="text display-value" data-display="testresult"></span>
+													</div>
+												</div>
+												<h4 class="form-section">Rating of Symptoms</h4>
+												<div class="control-group">
+													<label class="control-label">Eye Condition:</label>
+													<div class="controls">
+														<span class="text display-value" data-display="eye_doctor"></span>
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Feet Condition:</label>
+													<div class="controls">
+														<span class="text display-value" data-display="feet_doctor"></span>
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Kidney Condition:</label>
+													<div class="controls">
+														<span class="text display-value" data-display="kidney_doctor"></span>
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Heart Condition:</label>
+													<div class="controls">
+														<span class="text display-value" data-display="heart_doctor"></span>
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">LDL Index:</label>
+													<div class="controls">
+														<span class="text display-value" data-display="ldl_doctor"></span>
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Blood Pressure:</label>
+													<div class="controls">
+														<span class="text display-value" data-display="bloodpressure_doctor"></span>
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Glycemic Index:</label>
+													<div class="controls">
+														<span class="text display-value" data-display="glycemic_doctor"></span>
 													</div>
 												</div>
 											</div>
