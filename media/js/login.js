@@ -17,6 +17,10 @@ var Login = function () {
 	                },
 	                remember: {
 	                    required: false
+	                },
+	                email: {
+	                    required: true,
+	                    email: true
 	                }
 	            },
 
@@ -26,6 +30,9 @@ var Login = function () {
 	                },
 	                password: {
 	                    required: "Password is required."
+	                },
+	                email: {
+	                    required: "Email is required."
 	                }
 	            },
 
@@ -129,7 +136,7 @@ var Login = function () {
 	            focusInvalid: false, // do not focus the last invalid input
 	            ignore: "",
 	            rules: {
-	                username: {
+	                name: {
 	                    required: true
 	                },
 	                password: {
